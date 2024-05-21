@@ -1,11 +1,12 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
+#include <filesystem>
 
-void generateBinaryPicture(int width, int height, const std::string& filename) {
-  std::ofstream outFile(filename);
+void generateBinaryPicture(int width, int height, const std::filesystem::path& file_path) {
+  std::ofstream outFile(file_path);
   if (!outFile) {
-    std::cerr << "Error opening file: " << filename << std::endl;
+    std::cerr << "Error opening file: " << file_path << std::endl;
     return;
   }
 
